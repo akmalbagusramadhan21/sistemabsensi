@@ -1,13 +1,13 @@
 <?php
-
+session_start();
 include_once "sesi_karyawan.php";
-
-$modul=(isset($_GET['s']))?$_GET['s']:"awal";
+$modul=(isset($_GET['m']))?$_GET['m']:"awal";
+$jawal="Login Karyawan || SI Karyawan";
 switch($modul){
-	case 'awal': default: include "modul/karyawan/title.php"; break;
-	case 'profil': include 'modul/karyawan/profil.php'; break;
-	case 'edit': include 'modul/karyawan/edit.php'; break;
-	case 'update': include 'modul/karyawan/update.php'; break;
-	case 'index': include 'awal.php';
+    case 'awal': default: $aktif="Beranda"; $judul="Beranda $jawal"; include "awal.php"; break;
+    case 'karyawan': $aktif="Karyawan"; $judul="Modul Karyawan $jawal"; include "modul/karyawan/index.php"; break;
+    
+   
 }
+
 ?>
